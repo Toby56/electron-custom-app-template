@@ -1,0 +1,27 @@
+{
+  "name": "Orbit",
+  "productName": "Orbit",
+  "version": "0.2.1",
+  "description": "My Electron application description",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": {
+    "name": "Toby56",
+    "email": "Toby56@pm.me"
+  },
+  "license": "MIT",
+  "repository": "https://gitlab.com/Toby56/orbit",
+  "dependencies": {
+    "electron-window-state": "^5.0.3"
+  },
+  "devDependencies": {
+    "electron": "^8.0.1",
+    "electron-builder": "^22.3.2"
+  },
+  "prettier": {
+    "printWidth": 999
+  }
+}

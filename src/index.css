@@ -1,0 +1,188 @@
+/* html and body */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body.theme-light {
+  background-color: #fff;
+}
+
+body.theme-dark {
+  background-color: #222;
+}
+
+#window-titlebar {
+  position: absolute;
+  height: 32px;
+  width: 100%;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: auto 138px;
+}
+
+.theme-dark #window-titlebar-contents {
+  color: white;
+}
+
+.blurred #window-titlebar-contents,
+.blurred #window-controls .button {
+  opacity: 0.5;
+}
+
+.maximized #window-titlebar,
+.full-screen #window-titlebar {
+  width: 100%;
+}
+
+#window-titlebar-drag {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-app-region: drag;
+}
+
+.maximized #window-titlebar-drag,
+.full-screen #window-titlebar-drag {
+  top: 0;
+  left: 0;
+}
+
+#window-titlebar-contents {
+  width: 100%;
+  height: 100%;
+}
+
+#window-title {
+  grid-column: 1;
+  display: flex;
+  align-items: center;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 12px;
+  margin-left: 12px;
+  overflow-x: hidden;
+  user-select: none;
+  height: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.5;
+}
+
+#window-controls {
+  display: grid;
+  grid-template-columns: repeat(3, 46px);
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  font-family: "Segoe MDL2 Assets";
+  font-size: 10px;
+  -webkit-app-region: no-drag;
+}
+
+#window-controls .button {
+  grid-row: 1 / span 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  cursor: default;
+}
+
+#window-controls-minimize {
+  grid-column: 1;
+}
+
+#window-controls-maximize,
+#window-controls-restore {
+  grid-column: 2;
+}
+
+#window-controls-close {
+  grid-column: 3;
+}
+
+#window-controls-restore {
+  display: none !important;
+}
+
+#window-controls-maximize {
+  display: flex;
+}
+
+.full-screen #window-controls-restore,
+.maximized #window-controls-restore {
+  display: flex !important;
+}
+
+.full-screen #window-controls-maximize,
+.maximized #window-controls-maximize {
+  display: none;
+}
+
+.theme-light #window-controls .button:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.theme-light #window-controls .button:active {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.theme-dark #window-controls .button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.theme-dark #window-controls .button:active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+#window-controls .button:hover {
+  opacity: 1;
+}
+
+#window-controls-close:hover {
+  background: #e81123 !important;
+}
+
+#window-controls-close:active {
+  background: #f1707a !important;
+  color: #000;
+}
+
+#window-controls .icon {
+  -webkit-user-drag: none;
+}
+
+.theme-light #window-controls-close:hover:not(:active) .icon-white {
+  display: inline;
+}
+
+.theme-light #window-controls-close:hover:not(:active) .icon-black {
+  display: none;
+}
+
+.theme-dark #window-controls-close:active .icon-white {
+  display: none;
+}
+
+.theme-dark #window-controls-close:active .icon-black {
+  display: inline;
+}
+
+.theme-dark #window-controls .icon-black {
+  display: none;
+}
+
+.theme-light #window-controls .icon-white {
+  display: none;
+}
