@@ -3,4 +3,4 @@
 Desktop application for Compass! Powered by Electron.
 
 
-![](App demo.gif)
+![](App-demo.gif)
