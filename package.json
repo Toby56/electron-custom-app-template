@@ -1,6 +1,5 @@
 {
   "name": "App",
-  "productName": "App",
   "version": "1.0.0",
   "description": "My Electron application description",
   "main": "src/main.js",
@@ -8,11 +7,6 @@
     "start": "electron .",
     "pack": "electron-builder --dir",
     "dist": "electron-builder"
-  },
-  "keywords": [],
-  "author": {
-    "name": "Toby56",
-    "email": "Toby56@pm.me"
   },
   "license": "MIT",
   "repository": "https://gitlab.com/Toby56/orbit",
