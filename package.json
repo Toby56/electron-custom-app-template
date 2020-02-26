@@ -1,11 +1,13 @@
 {
-  "name": "Orbit",
-  "productName": "Orbit",
-  "version": "0.2.1",
+  "name": "App",
+  "productName": "App",
+  "version": "1.0.0",
   "description": "My Electron application description",
   "main": "src/main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
   "keywords": [],
   "author": {
