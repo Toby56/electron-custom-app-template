@@ -1,5 +1,3 @@
-/* html and body */
-
 html,
 body {
   height: 100%;
@@ -18,8 +16,8 @@ body.theme-dark {
   background-color: #222;
 }
 
-#window-titlebar {
-  position: absolute;
+#titlebar {
+  position: fixed;
   height: 32px;
   width: 100%;
   box-sizing: border-box;
@@ -27,68 +25,54 @@ body.theme-dark {
   grid-template-columns: auto 138px;
 }
 
-.theme-dark #window-titlebar-contents {
+.theme-dark #titlebar-text {
   color: white;
 }
 
-.blurred #window-titlebar-contents,
-.blurred #window-controls .button {
+.blurred #titlebar-text {
   opacity: 0.5;
 }
 
-.maximized #window-titlebar,
-.full-screen #window-titlebar {
-  width: 100%;
-}
-
-#window-titlebar-drag {
+#titlebar-drag {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 4px;
+  left: 4px;
+  right: 4px;
   bottom: 0;
   -webkit-app-region: drag;
 }
 
-.maximized #window-titlebar-drag,
-.full-screen #window-titlebar-drag {
+.maximized #titlebar-drag,
+.full-screen #titlebar-drag {
   top: 0;
   left: 0;
+  right: 0;
 }
 
-#window-titlebar-contents {
-  width: 100%;
-  height: 100%;
-}
-
-#window-title {
+#titlebar-text {
+  position: relative;
   grid-column: 1;
   display: flex;
   align-items: center;
   font-family: "Segoe UI", sans-serif;
   font-size: 12px;
-  margin-left: 12px;
-  overflow-x: hidden;
   user-select: none;
   height: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
   line-height: 1.5;
+  white-space: nowrap;
+  padding-left: 12px;
 }
 
-#window-controls {
+#titlebar-buttons {
   display: grid;
   grid-template-columns: repeat(3, 46px);
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
-  font-family: "Segoe MDL2 Assets";
-  font-size: 10px;
-  -webkit-app-region: no-drag;
+  position: relative;
+  -webkit-app-region: none;
 }
 
-#window-controls .button {
+#titlebar-buttons .button {
   grid-row: 1 / span 1;
   display: flex;
   justify-content: center;
@@ -99,90 +83,94 @@ body.theme-dark {
   cursor: default;
 }
 
-#window-controls-minimize {
-  grid-column: 1;
+#titlebar-buttons .icon {
+  -webkit-user-drag: none;
 }
 
-#window-controls-maximize,
-#window-controls-restore {
-  grid-column: 2;
+.blurred #titlebar-buttons .button {
+  opacity: 0.5;
 }
 
-#window-controls-close {
-  grid-column: 3;
-}
-
-#window-controls-restore {
-  display: none !important;
-}
-
-#window-controls-maximize {
-  display: flex;
-}
-
-.full-screen #window-controls-restore,
-.maximized #window-controls-restore {
-  display: flex !important;
-}
-
-.full-screen #window-controls-maximize,
-.maximized #window-controls-maximize {
-  display: none;
-}
-
-.theme-light #window-controls .button:hover {
-  background: rgba(0, 0, 0, 0.1);
-}
-
-.theme-light #window-controls .button:active {
-  background: rgba(0, 0, 0, 0.2);
-}
-
-.theme-dark #window-controls .button:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.theme-dark #window-controls .button:active {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-#window-controls .button:hover {
+#titlebar-buttons .button:hover {
   opacity: 1;
 }
 
-#window-controls-close:hover {
+#titlebar-buttons-minimize {
+  grid-column: 1;
+}
+
+#titlebar-buttons-maximize,
+#titlebar-buttons-restore {
+  grid-column: 2;
+}
+
+#titlebar-buttons-close {
+  grid-column: 3;
+}
+
+#titlebar-buttons-restore {
+  display: none !important;
+}
+
+#titlebar-buttons-maximize {
+  display: flex;
+}
+
+.full-screen #titlebar-buttons-restore,
+.maximized #titlebar-buttons-restore {
+  display: flex !important;
+}
+
+.full-screen #titlebar-buttons-maximize,
+.maximized #titlebar-buttons-maximize {
+  display: none;
+}
+
+.theme-light #titlebar-buttons .button:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.theme-light #titlebar-buttons .button:active {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.theme-dark #titlebar-buttons .button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.theme-dark #titlebar-buttons .button:active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+#titlebar-buttons-close:hover {
   background: #e81123 !important;
 }
 
-#window-controls-close:active {
+#titlebar-buttons-close:active {
   background: #f1707a !important;
   color: #000;
 }
 
-#window-controls .icon {
-  -webkit-user-drag: none;
-}
-
-.theme-light #window-controls-close:hover:not(:active) .icon-white {
+.theme-light #titlebar-buttons-close:hover:not(:active) .icon-white {
   display: inline;
 }
 
-.theme-light #window-controls-close:hover:not(:active) .icon-black {
+.theme-light #titlebar-buttons-close:hover:not(:active) .icon-black {
   display: none;
 }
 
-.theme-dark #window-controls-close:active .icon-white {
+.theme-dark #titlebar-buttons-close:active .icon-white {
   display: none;
 }
 
-.theme-dark #window-controls-close:active .icon-black {
+.theme-dark #titlebar-buttons-close:active .icon-black {
   display: inline;
 }
 
-.theme-dark #window-controls .icon-black {
+.theme-dark #titlebar-buttons .icon-black {
   display: none;
 }
 
-.theme-light #window-controls .icon-white {
+.theme-light #titlebar-buttons .icon-white {
   display: none;
 }
