@@ -1,6 +1,7 @@
 {
-  "name": "App",
-  "version": "1.0.0",
+  "name": "electron-custom-app-template",
+  "version": "1.1.0",
+  "author": "Toby56",
   "description": "My Electron application description",
   "main": "src/main.js",
   "scripts": {
@@ -14,10 +15,7 @@
     "electron-window-state": "^5.0.3"
   },
   "devDependencies": {
-    "electron": "^8.0.1",
-    "electron-builder": "^22.3.2"
-  },
-  "prettier": {
-    "printWidth": 999
+    "electron": "^8.1.1",
+    "electron-builder": "^22.4.1"
   }
 }
